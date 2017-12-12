@@ -5,7 +5,7 @@ package com.example.hannahroseneill.pawsome
  */
 data class Contact(
 		var name:String,
-        var phone:Int,
+        var phone:String,
         var email:String,
         var address:String,
         var type:String

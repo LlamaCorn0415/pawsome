@@ -32,11 +32,18 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
 	inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 		val txtName = itemView.txtName
 		val imgAvatar = itemView.imgAvatar
+		val txtAddress = itemView.txtAddress
+		val txtEmail = itemView.txtEmail
+		val txtPhone = itemView.txtPhone
 
 		fun bind(position: Int) {
 			val person = contacts[position]
 			txtName.text = person.name
-			//Need to add more for phone, email, address,etc, but on diff page perhaps?
+			txtAddress.text = person.address
+			txtEmail.text = person.email
+			txtPhone.text = person.phone
+
+
 		}
 
 	}
