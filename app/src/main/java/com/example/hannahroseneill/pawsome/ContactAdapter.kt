@@ -22,7 +22,7 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
 	}
 
 	override fun getItemCount(): Int {
-		return 3
+		return contacts.size
 	}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
