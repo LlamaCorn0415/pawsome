@@ -1,5 +1,7 @@
 package com.example.hannahroseneill.pawsome
 
+import java.io.Serializable
+
 /**
  * Created by hannahroseneill on 12/7/17.
  */
@@ -9,4 +11,4 @@ data class Contact(
         var email:String,
         var address:String,
         var type:String
-)
+): Serializable

@@ -1,5 +1,6 @@
 package com.example.hannahroseneill.pawsome
 
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -42,7 +43,11 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
 			txtAddress.text = person.address
 			txtEmail.text = person.email
 			txtPhone.text = person.phone
-
+			itemView.setOnClickListener {
+				var intent = Intent (itemView.context, ContactDetails::class.java)
+				intent.putExtra("Contact", person)
+				itemView.context.startActivity(intent)
+			}
 
 		}
 
