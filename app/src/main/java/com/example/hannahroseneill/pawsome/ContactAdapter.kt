@@ -50,6 +50,5 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
 			}
 
 		}
-
 	}
 }

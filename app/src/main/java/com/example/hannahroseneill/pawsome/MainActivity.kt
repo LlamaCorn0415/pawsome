@@ -1,9 +1,11 @@
 package com.example.hannahroseneill.pawsome
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.contact_item.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 		adapter.addContact(Contact("Daisy", "405 - 299 - 4853", "CrazyDaisy@gmail.com", "7250 NW Boquet Dr", "Cat Person"))
 		//phone number was changed to String because it was doing subtraction... o.o
 
+
 	}
 
 	var adapter = ContactAdapter()
@@ -26,5 +29,5 @@ class MainActivity : AppCompatActivity() {
 		contactList.layoutManager = LinearLayoutManager(this)
 		contactList.adapter = adapter
 
+		}
 	}
-}
