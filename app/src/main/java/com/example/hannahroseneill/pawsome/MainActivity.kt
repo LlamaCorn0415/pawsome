@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity() {
 		adapter.addContact(Contact("Daisy", "405 - 299 - 4853", "CrazyDaisy@gmail.com", "7250 NW Boquet Dr"))
 		//phone number was changed to String because it was doing subtraction... o.o
 
+		addContactButton.setOnClickListener{
+			var intent = Intent (this, AddContactActivity::class.java)
+			startActivity(intent)
+		}
 
 	}
 
