@@ -9,6 +9,5 @@ data class Contact(
 		var name:String,
         var phone:String,
         var email:String,
-        var address:String,
-        var type:String
+        var address:String
 ): Serializable

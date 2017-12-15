@@ -17,14 +17,13 @@ class ContactDetails : AppCompatActivity() {
 		setContentView(R.layout.contact_details)
 
 
-			var contact = intent.getSerializableExtra("Contact")
-			Log.e("Pkmmte", contact.toString())
+		var contact = intent.getSerializableExtra("Contact") as Contact
+		Log.e("Pkmmte", contact.toString())
 
-		imgContactImage.setOnClickListener {
-			var intent = Intent(this, ContactDetails::class.java)
-			startActivity(intent)
-
-		}
-
+		txtDetailBoldName.text = "${contact.name}"
+		txtDetailPhone.text = "Phone: ${contact.phone}"
+		txtDetailEmail.text = "Email: ${contact.email}"
+		txtDetailAddress.text = "Address: ${contact.address}"
 	}
+
 }

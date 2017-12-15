@@ -15,9 +15,9 @@ class MainActivity : AppCompatActivity() {
 
 		prepareContactList()
 
-		adapter.addContact(Contact("Catherine", "541 - 987 - 6544", "Cat@gmail.com", "123 45th St", "Cat Person"))
-		adapter.addContact(Contact("Rufus", "818 - 243 - 7475", "DoofusRufus@gmail.com", "432 Sicko Ln", "Dog Person"))
-		adapter.addContact(Contact("Daisy", "405 - 299 - 4853", "CrazyDaisy@gmail.com", "7250 NW Boquet Dr", "Cat Person"))
+		adapter.addContact(Contact("Catherine", "541 - 987 - 6544", "Cat@gmail.com", "123 45th St" ))
+		adapter.addContact(Contact("Rufus", "818 - 243 - 7475", "DoofusRufus@gmail.com", "432 Sicko Ln"))
+		adapter.addContact(Contact("Daisy", "405 - 299 - 4853", "CrazyDaisy@gmail.com", "7250 NW Boquet Dr"))
 		//phone number was changed to String because it was doing subtraction... o.o
 
 
