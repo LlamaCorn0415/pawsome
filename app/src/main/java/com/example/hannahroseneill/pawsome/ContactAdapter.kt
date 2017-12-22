@@ -10,12 +10,16 @@ import kotlinx.android.synthetic.main.contact_item.view.*
 /**
  * Created by hannahroseneill on 12/7/17.
  */
-class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
+class ContactAdapter(var activity: MainActivity): RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
 
 	val contacts = ArrayList<Contact>()
 
 	fun addContact(person: Contact) {
 		contacts.add(person)
+	}
+
+	fun removeContact(person: Contact){
+		contacts.remove(person)
 	}
 
 	override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -46,7 +50,7 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
 			itemView.setOnClickListener {
 				var intent = Intent(itemView.context, ContactDetails::class.java)
 				intent.putExtra("Contact", person)
-				itemView.context.startActivity(intent)
+				activity.startActivityForResult(intent, 225)
 			}
 
 		}

@@ -1,5 +1,6 @@
 package com.example.hannahroseneill.pawsome
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -24,6 +25,14 @@ class ContactDetails : AppCompatActivity() {
 		txtDetailPhone.text = "Phone: ${contact.phone}"
 		txtDetailEmail.text = "Email: ${contact.email}"
 		txtDetailAddress.text = "Address: ${contact.address}"
+
+		btnRemoveContact.setOnClickListener{
+			var intent = Intent()
+			intent.putExtra("Contact", contact)
+			intent.putExtra("Remove", true)
+			setResult(Activity.RESULT_OK, intent)
+			finish()
+		}
 	}
 
 }

@@ -7,8 +7,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.add_contact_activity.*
-import kotlinx.android.synthetic.main.contact_item.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,22 +28,36 @@ class MainActivity : AppCompatActivity() {
 
 	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 		super.onActivityResult(requestCode, resultCode, data)
-		if (resultCode == RESULT_OK) {
-			if (data != null) {
-				var contact = data.getSerializableExtra("Contact") as Contact
-				Log.e("Special", contact.toString())
-				adapter.addContact(contact)
-				adapter.notifyDataSetChanged()
+		if (resultCode == RESULT_OK){
+			if(requestCode == 3){
+				if (data != null) {
+					var contact = data.getSerializableExtra("Contact") as Contact
+					Log.e("Special", contact.toString())
+					adapter.addContact(contact)
+					adapter.notifyDataSetChanged()
+
+				}
+			}else if(requestCode == 225){
+				if (data != null){
+					var remove = data.getBooleanExtra("Remove", false)
+
+					if (remove == true){
+						var contact = data.getSerializableExtra("Contact") as Contact
+						adapter.removeContact(contact)
+						adapter.notifyDataSetChanged() 
+					}
+				}
 			}
 
 		}
 	}
 
-	var adapter = ContactAdapter()
+	var adapter = ContactAdapter(this)
 
 	fun prepareContactList() {
 		contactList.layoutManager = LinearLayoutManager(this)
 		contactList.adapter = adapter
 
 	}
+
 }
