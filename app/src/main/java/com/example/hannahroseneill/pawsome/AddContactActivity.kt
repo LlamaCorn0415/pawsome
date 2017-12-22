@@ -27,6 +27,8 @@ class AddContactActivity : AppCompatActivity() {
 			intent.putExtra("Contact", contact)
 			setResult(Activity.RESULT_OK, intent)
 			finish()
+
+
 		}
 	}
 }

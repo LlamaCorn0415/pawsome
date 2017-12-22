@@ -44,7 +44,7 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
 			txtEmail.text = person.email
 			txtPhone.text = person.phone
 			itemView.setOnClickListener {
-				var intent = Intent (itemView.context, ContactDetails::class.java)
+				var intent = Intent(itemView.context, ContactDetails::class.java)
 				intent.putExtra("Contact", person)
 				itemView.context.startActivity(intent)
 			}
